@@ -13,7 +13,7 @@
     a) IO style--the same as standard package "compress"
        
        gosnappy.NewReader(r io.Reader)(r io.Reader, err os.Error)
-       gosnappy.NewWriter(w io.Writer)(w io.Writer,err os.Error)
+       gosnappy.NewWriter(w io.Writer)(w io.WriteCloser,err os.Error)
           
            user must call w.Close() at the end of write. 
            w.Close does not close the underlined writer           
