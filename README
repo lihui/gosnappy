@@ -1,0 +1,32 @@
+1) Rrerequisite:
+   snappy should be installed first
+
+2) Install:
+   cd gosnappy   
+   make install
+
+   usage:
+   import  "lihui/gosnappy"  
+ 
+3) API Description
+
+    a) IO style--the same as standard package "compress"
+       
+       gosnappy.NewReader(r io.Reader)(r io.Reader, err os.Error)
+       gosnappy.NewWriter(w io.Writer)(w io.Writer,err os.Error)
+          
+           user must call w.Close() at the end of write. 
+           w.Close does not close the underlined writer           
+       
+    b) Byte array  style-- the same as original snappy lib
+     
+       gosnappy.Compress(output []byte,input []byte)[]byte
+       gosnappy.Decompress(output []byte,input []byte)(result []byte,err os.Error) 
+
+       we could pass nil or small byte array to 'output' parameter of these functions, 
+       if the capacity of output less than the result size , function will
+       automaticly malloc new byte array which is large enough. 
+       
+       therefor the 'result' object returned may be not the same as 'output'
+       object 
+    
