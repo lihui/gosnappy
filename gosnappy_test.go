@@ -1,4 +1,4 @@
-package snappy
+package gosnappy
 
 import "testing"
 import "bytes"

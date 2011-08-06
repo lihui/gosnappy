@@ -1,4 +1,4 @@
-package snappy
+package gosnappy
 
 //#include<snappy-c.h>
 //#include<stdlib.h>
